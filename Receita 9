@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>ReactZero</title>
+    <title>Tabela Fixa</title>
 </head>
 <body>
     <div id="app"></div>
@@ -12,16 +12,33 @@
     <script>
         ReactDOM.render(
             React.createElement(
-                'h1',
-                { id: 'my-heading' },
+                'table',
+                { border: '1', style: { width: '100%', textAlign: 'center' } },
                 [
                     React.createElement(
-                        'span',
+                        'thead',
                         null,
-                        'React!',
-                        React.createElement('em', null, 'é muito')
+                        React.createElement(
+                            'tr',
+                            null,
+                            [
+                                React.createElement('th', null, 'Coluna 1'),
+                                React.createElement('th', null, 'Coluna 2'),
+                            ]
+                        )
                     ),
-                    ' massa!'
+                    React.createElement(
+                        'tbody',
+                        null,
+                        React.createElement(
+                            'tr',
+                            null,
+                            [
+                                React.createElement('td', null, 'Linha 1, C1'),
+                                React.createElement('td', null, 'Linha 1, C2'),
+                            ]
+                        )
+                    )
                 ]
             ),
             document.getElementById('app')
